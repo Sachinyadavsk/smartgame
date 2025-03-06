@@ -1,0 +1,140 @@
+.search {
+    position: relative;
+    margin-bottom: 0;
+}
+
+.search-icon {
+    position: absolute;
+    right: 5%;
+    top: 25%;
+    border: none;
+    cursor: pointer;
+    background-color: inherit;
+}
+
+
+.cookie-consent {
+    z-index: 10;
+    max-width: 700px;
+    margin: auto auto;
+    width:100%
+}
+
+.cookie-consent > div > div > div > div:first-child {
+    display: inline;
+    width: 100%;
+}
+
+.cookie-consent > div > div {
+    padding: 1rem;
+}
+
+.cookie-consent button.cookie-consent__agree {
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.cookie_consent_window{
+    background-color: #fff !important;
+}
+
+.cookie-consent__agree {
+    background-color: #6340F5 !important;
+    color: #fff !important;
+}
+
+/* Example: Customize the button hover color */
+.cookie-consent__agree:hover {
+    background-color: #6340F5; /* Change to your desired hover color */
+}
+
+/* .game-banner-container {
+    background-image: url('/images/section-bg.webp');
+}
+
+.footer-bg {
+    background: #261137;
+}
+
+.bg-game-portrait {
+    background-image: url('/images/bg-portrait.webp');
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.bg-game-landscape {
+    background-image: url('/images/bg-landscape.webp');
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.bg-game-4-3 {
+    background-image: url('/images/bg-4-3.webp');
+    background-repeat: no-repeat;
+    background-size: contain;
+} */
+
+
+#loading {
+    opacity: 0.7;
+    background-color: white;
+}
+
+.main-container {
+    background: linear-gradient(163.53deg, #160623 31.47%, #1A092B 99.08%);
+}
+
+@keyframes playBtnAnimation {
+    0% {
+        transform: scale(1.0);
+        -webkit-transform: scale(1.0);
+    }
+
+    25% {
+        transform: scale(1.05);
+        -webkit-transform: scale(1.05);
+    }
+
+    50% {
+        transform: scale(1.0);
+        -webkit-transform: scale(1.0);
+    }
+
+    75% {
+        transform: scale(1.05);
+        -webkit-transform: scale(1.05);
+    }
+
+    100% {
+        transform: scale(1.0);
+        -webkit-transform: scale(1.0);
+    }
+}
+
+.animatedPlayBtn:hover {
+    animation-name: playBtnAnimation;
+    animation-duration: 0.3s;
+}
+
+#game-content > article p h1, #game-content > article p h2, #game-content > article p h3, #game-content > article p h4,#game-content > article p h5,
+#game-content > article p h6,
+#game-content > article p strong,
+#game-content > article p b, #game-content > article p a {
+    color: white !important;
+}
+
+#blog-content > p h1,#blog-content > p h2, #blog-content p h3, #blog-content > p h4,#blog-content > p h5,
+#blog-content > p h6,
+#blog-content > p strong, #blog-content > ul > li > strong, #blog-content > ul > li,
+#blog-content > p b, #blog-content > p a  {
+    color: white !important;
+}
+
+ .quiz-poster-container {
+    background-image: url('../images/quizposter-bg.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
