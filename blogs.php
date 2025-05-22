@@ -1,4 +1,13 @@
 <?php include('top_header_url.php');?>
+<?php                                                                                                               
+    $cat_res4=mysqli_query($con,"select * from meta_data where page='blogs'");
+    $cat_arr4=array();
+    while($row4=mysqli_fetch_assoc($cat_res4)){
+    $cat_arr4[]=$row4;    
+    }
+    foreach($cat_arr4 as $list){
+      echo htmlspecialchars_decode($list['data']);
+     }?>
 <?php include('bottam_header_url.php');?>
 
 <body class="google-anno-skip main-container font-inter">
@@ -6,7 +15,7 @@
         <?php include('header.php');?>
     </div>
     <div class="md:w-[80%] lg:w-[64%] w-full overflow-x-hidden mx-auto">
-        <h1 class="sr-only">Read interesting games articles | Free Games</h1>
+        <h1 class="sr-only">Read interesting games articles | Nwoow Games</h1>
         <div class="w-full flex justify-center my-5">
             <div class="w-full" id="static-ad-1">
                 <script>

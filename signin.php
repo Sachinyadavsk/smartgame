@@ -1,4 +1,13 @@
 <?php include('top_header_url.php');?>
+<?php                                                                                                               
+    $cat_res4=mysqli_query($con,"select * from meta_data where page='signin'");
+    $cat_arr4=array();
+    while($row4=mysqli_fetch_assoc($cat_res4)){
+    $cat_arr4[]=$row4;    
+    }
+    foreach($cat_arr4 as $list){
+      echo htmlspecialchars_decode($list['data']);
+     }?>
 <?php include('bottam_header_url.php');?>
 
 <body class="google-anno-skip main-container font-inter">
@@ -7,7 +16,7 @@
     </div>
     <div class="md:w-[80%] lg:w-[64%] w-full overflow-x-hidden mx-auto">
 
-        <h1 class="sr-only">About Us | Free Games</h1>
+        <h1 class="sr-only">About Us | Nwoow Games</h1>
         <div class="w-full flex justify-center my-5">
             <div class="w-full" id="static-ad-1">
                 <script>
@@ -20,7 +29,7 @@
         <div
             class="my-5 game-banner-container bg-cover bg-no-repeat bg-[#261137] border-[#D09DF9] border-[1px] border-opacity-30 text-white py-[3rem] px-10 grid justify-center place-item-center rounded-[30px]">
             <div class="gap-4">
-                <h1 class="text-[24px] tracking-wide font-bold capitalize leading-5 mb-6 mt-4">Login - Free Games
+                <h1 class="text-[24px] tracking-wide font-bold capitalize leading-5 mb-6 mt-4">Login - Nwoow Games
                 </h1>
                 <div class="space-y-8 py-2 px-5 border rounded-xl hover:scale-110 duration-300">
                     <p class="text-xs mt-4 text-[#002D74]">If you are already a member, easily log in</p>
@@ -42,7 +51,7 @@
                     <p><a href="#" class="text-xs">Forgot your password?</a></p>
                     <div class="mt-3 text-xs flex justify-between items-center text-[#002D74]">
                         <p>Don't have an account?</p>
-                        <p><a href="regsiter.php"
+                        <p><a href="regsiter"
                                 class="py-1 px-5 border rounded-xl hover:scale-110 duration-300">Register</a></p>
                     </div </div>
                 </div>

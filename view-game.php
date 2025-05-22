@@ -1,8 +1,24 @@
 <?php include('top_header_url.php');?>
+<?php                                                                                                               
+    $cat_res4=mysqli_query($con,"select * from meta_data where page='viewgame'");
+    $cat_arr4=array();
+    while($row4=mysqli_fetch_assoc($cat_res4)){
+    $cat_arr4[]=$row4;    
+    }
+    foreach($cat_arr4 as $list){
+      echo htmlspecialchars_decode($list['data']);
+     }?>
 <?php include('bottam_header_url.php');?>
+
+<?php if($_REQUEST['game']!=''){
+      $game_id=$_REQUEST['game'];
+       }else{
+       header("https://nwoow.com/");
+       } ?>
 <?php
-$game_id =$_GET['game_id'];
-$query = "select * from games where id=$game_id";
+// $game_id =$_GET['game_id'];
+$contest_id = str_replace('-',' ', $game_id);
+$query = "select * from games where name='$contest_id'";
 $res = mysqli_query($con, $query);
 $result = mysqli_fetch_assoc($res);
 
@@ -12,7 +28,7 @@ $result = mysqli_fetch_assoc($res);
         <?php include('header.php');?>
     </div>
     <div class="md:w-[80%] lg:w-[64%] w-full overflow-x-hidden mx-auto">
-        <h1 class="sr-only"><?php echo $result['name'];?>- Play online games for Free | Free Games</h1>
+        <h1 class="sr-only"><?php echo $result['name'];?>- Play online games for Free | Nwoow Games</h1>
         <div class="w-full flex justify-center my-5">
             <div class="w-full" id="static-ad-1">
                 <script>
@@ -25,12 +41,12 @@ $result = mysqli_fetch_assoc($res);
         <div
             class="my-5 game-banner-container bg-[#261137] border-[#D09DF9] border-[1px] border-opacity-30 py-[3rem] px-[4rem] grid justify-center place-item-center rounded-[30px]">
             <div class="flex flex-col justify-center items-center gap-4">
-                <a href="play-game.php?play_id=<?php echo $result['id']?>">
-                    <img src="images/games/<?php echo $result['image']?>"
+                <a href="https://nwoow.com/play-game.php?play_id=<?php echo $result['id']?>">
+                    <img src="https://nwoow.com/images/games/<?php echo $result['image']?>"
                         alt="<?php echo $result['name'];?>" class="w-96 object-cover aspect-video rounded-2xl">
                 </a>
-                <h1 class="font-bold text-3xl uppercase text-white"><?php echo $result['name'];?></h1>
-                <a href="play-game.php?play_id=<?php echo $result['id']?>"
+                <h2 class="font-bold text-3xl uppercase text-white"><?php echo $result['name'];?></h2>
+                <a href="https://nwoow.com/play-game.php?play_id=<?php echo $result['id']?>"
                     class="animatedPlayBtn uppercase bg-[#7008C5] font-semibold text-white text-md rounded-full w-48 p-3 text-center"
                     type="button">
                     Play Now
@@ -66,15 +82,15 @@ $result = mysqli_fetch_assoc($res);
             class="my-5 game-banner-container bg-[#261137] border-[#D09DF9] border-[1px] border-opacity-30 grid rounded-[30px]">
             <div class="w-full rounded-[30px] bg-cover bg-no-repeat game-banner-container p-5">
                 <div class="w-full flex items-center mb-3">
-                    <img src="images/similar_games_icon.svg" alt="All games" class="h-[30px] w-[30px] mr-2" />
+                    <img src="https://nwoow.com/images/similar_games_icon.svg" alt="All games" class="h-[30px] w-[30px] mr-2" />
                     <h3 class="text-[24px] tracking-tight text-black font-semibold uppercase flex-none"
                         style="font-weight: bold; background: linear-gradient(176.89deg, #FFFFFF 2.58%, #BEADCD 78.88%); -webkit-background-clip: text; color: transparent;">
                         Similar Games</h3>
                     <div class="grow"></div>
-                    <a class="text-[14px]  text-black font-normal capitalize" href="games.php"
+                    <a class="text-[14px]  text-black font-normal capitalize" href="https://nwoow.com/games"
                         style="background: linear-gradient(180deg, #FFFFFF, #BEADCD); -webkit-background-clip: text; color: transparent;">view
                         all </a>
-                    <img src="images/right-arrow.svg" class="text-[14px]  text-black font-normal h-5 w-5"
+                    <img src="https://nwoow.com/images/right-arrow.svg" class="text-[14px]  text-black font-normal h-5 w-5"
                         alt="right arrow">
                 </div>
 
@@ -89,21 +105,21 @@ $result = mysqli_fetch_assoc($res);
                     <div class="md:col-span-3 col-span-2">
                         <div class="aspect-[9/16] group relative w-full">
                             <div class="absolute inset-0 flex items-center justify-center">
-                                <img src="images/games/<?php echo $row['image']?>" alt="<?php echo $row['name']?>"
+                                <img src="https://nwoow.com/images/games/<?php echo $row['image']?>" alt="<?php echo $row['name']?>"
                                     class="h-[50px] w-[50px] object-contain animate-spin-slow">
                             </div>
                             <div class="absolute inset-0">
-                                <a href="view-game.php?game_id=<?php echo $row['id']?>">
+                                <a href="https://nwoow.com/view-game/<?php echo str_replace(' ','-', $row['name']); ?>">
                                     <img class="h-full w-full object-cover border-[#D09DF9] border-[1px] border-opacity-30 rounded-lg"
-                                        src="images/games/<?php echo $row['image']?>"
+                                        src="https://nwoow.com/images/games/<?php echo $row['image']?>"
                                         alt="<?php echo $row['name']?>" />
                                 </a>
                             </div>
-                            <a href="view-game.php?game_id=<?php echo $row['id']?>">
+                            <a href="https://nwoow.com/view-game/<?php echo str_replace(' ','-', $row['name']); ?>">
                                 <div
                                     class="backdrop-blur-sm hidden md:visible bg-game-portrait absolute inset-0 w-full h-full md:flex flex-col gap-2 items-center justify-center opacity-0 transition-opacity duration-300 group-hover:opacity-100">
                                     <img class="group-hover:translate-y-0 translate-y-6 transition-transform duration-300 p-0 mx-auto block aspect-1/1 object-fill w-[50%]"
-                                        src="images/games/<?php echo $row['image']?>"
+                                        src="https://nwoow.com/images/games/<?php echo $row['image']?>"
                                         alt="<?php echo $row['name']?>" />
                                     <button
                                         class="animatedPlayBtn group-hover:translate-y-0 translate-y-6 transition-transform duration-300 capitalize bg-[#7008C5] font-semibold text-white text-lg rounded-full px-5 py-1">

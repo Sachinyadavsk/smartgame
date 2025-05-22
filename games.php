@@ -1,4 +1,13 @@
 <?php include('top_header_url.php');?>
+<?php                                                                                                               
+    $cat_res4=mysqli_query($con,"select * from meta_data where page='games'");
+    $cat_arr4=array();
+    while($row4=mysqli_fetch_assoc($cat_res4)){
+    $cat_arr4[]=$row4;    
+    }
+    foreach($cat_arr4 as $list){
+      echo htmlspecialchars_decode($list['data']);
+     }?>
 <?php include('bottam_header_url.php');?>
 
 <body class="google-anno-skip main-container font-inter">
@@ -6,7 +15,7 @@
         <?php include('header.php');?>
     </div>
     <div class="md:w-[80%] lg:w-[64%] w-full overflow-x-hidden mx-auto">
-        <h1 class="sr-only">Explore Diverse Free Online Games | Jambo Games</h1>
+        <h1 class="sr-only">Explore Diverse Free Online Games | Nwoow Games</h1>
         <div class="w-full flex justify-center my-5">
             <div class="w-full" id="static-ad-3">
                 <script>
@@ -25,7 +34,7 @@
                         Puzzle</h3>
                     <div class="grow"></div>
                     <a class="text-[14px] text-white font-normal leading-[14px] capitalize"
-                        href="puzzle.php">view all </a>
+                        href="puzzle">view all </a>
                     <img src="images/right-arrow.svg" class="text-sm h-5 w-5" alt="right arrow">
                 </div>
                 <div class="grid md:grid-cols-12 grid-cols-4 gap-3 px-[0.3rem]">
@@ -89,7 +98,7 @@
                         Casual</h3>
                     <div class="grow"></div>
                     <a class="text-[14px] text-white font-normal leading-[14px] capitalize"
-                        href="casual.php">view all </a>
+                        href="casual">view all </a>
                     <img src="images/right-arrow.svg" class="text-sm h-5 w-5" alt="right arrow">
                 </div>
                 <div class="grid md:grid-cols-12 grid-cols-4 gap-3 px-[0.3rem]">
@@ -153,7 +162,7 @@
                         Arcade</h3>
                     <div class="grow"></div>
                     <a class="text-[14px] text-white font-normal leading-[14px] capitalize"
-                        href="arcade.php">view all </a>
+                        href="arcade">view all </a>
                     <img src="images/right-arrow.svg" class="text-sm h-5 w-5" alt="right arrow">
                 </div>
                 <div class="grid md:grid-cols-12 grid-cols-4 gap-3 px-[0.3rem]">
@@ -221,7 +230,7 @@
                         Action</h3>
                     <div class="grow"></div>
                     <a class="text-[14px] text-white font-normal leading-[14px] capitalize"
-                        href="action.php">view all </a>
+                        href="action">view all </a>
                     <img src="images/right-arrow.svg" class="text-sm h-5 w-5" alt="right arrow">
                 </div>
                 <div class="grid md:grid-cols-12 grid-cols-4 gap-3 px-[0.3rem]">
@@ -287,7 +296,7 @@
                         Imaging</h3>
                     <div class="grow"></div>
                     <a class="text-[14px] text-white font-normal leading-[14px] capitalize"
-                        href="imaging.php">view all </a>
+                        href="imaging">view all </a>
                     <img src="images/right-arrow.svg" class="text-sm h-5 w-5" alt="right arrow">
                 </div>
                 <div class="grid md:grid-cols-12 grid-cols-4 gap-3 px-[0.3rem]">

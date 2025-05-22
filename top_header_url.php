@@ -1,20 +1,44 @@
  <?php include("db_connection.php");?>
 <html lang="en">
 <head>
-    <title>Play Free Online Games | Free Games - Your Gateway to Gaming Fun
-    </title>
-    <meta name="description" content="Explore a world of free online gaming fun at Free Games." />
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="robots" content="index, follow" />
-    <link rel="manifest" href="#">
-    <link rel="apple-touch-icon" sizes="180x180" href="#">
-    <link rel="icon" type="image/png" sizes="32x32" href="#">
-    <link rel="icon" type="image/png" sizes="16x16" href="#">
-    <link rel="mask-icon" href="#" color="#5bbad5">
-    <meta name="msapplication-TileColor" content="#da532c">
-    <meta name="theme-color" content="#ffffff">
-    <meta property="og:title" content="Play Free Online Games | Free Games - Your Gateway to Gaming Fun" />
-    <meta property="og:description" content="Explore a world of free online gaming fun at Free Games." />
-    <meta property="og:url" content="#" />
-    <meta property="og:image" content="favicon.ico" />
+    <meta name="robots" content="index, follow">
+    <meta name="google-site-verification" content="Ul9fntVUGmlrue91aHCmKaNykvOhm7NoxB6bGZE5fxk" />
+    <link rel="alternate" hreflang="en-us" href="https://nwoow.com/us/" />
+    <link rel="alternate" hreflang="en-gb" href="https://nwoow.com/uk/" />
+    <link rel="alternate" hreflang="en-in" href="https://nwoow.com/in/" />
+    <link rel="alternate" hreflang="x-default" href="https://nwoow.com/" />
+    
+    <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": "Review",
+          "itemReviewed": {
+            "@type": "VideoGame",
+            "name": "nwoow",
+            "author": {
+              "@type": "Organization",
+              "name": "nwoow"
+            },
+            "publisher": {
+              "@type": "Organization",
+              "name": "nwoow"
+            },
+            "genre": "nwoow",
+            "url": "<?php echo 'https://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI']; ?>"
+          },
+          "author": {
+            "@type": "Person",
+            "name": "Pankaj"
+          },
+          "reviewRating": {
+            "@type": "Rating",
+            "ratingValue": "4.6",
+            "bestRating": "5",
+            "worstRating": "1"
+          },
+          "reviewBody": "GTA VI offers a vast open-world experience, stunning graphics, and deeply immersive storytelling. A solid upgrade from previous titles.",
+          "datePublished": "2025-01-19"
+        }
+   </script>

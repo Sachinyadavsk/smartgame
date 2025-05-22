@@ -1,4 +1,13 @@
 <?php include('top_header_url.php');?>
+<?php                                                                                                               
+    $cat_res4=mysqli_query($con,"select * from meta_data where page='playgame'");
+    $cat_arr4=array();
+    while($row4=mysqli_fetch_assoc($cat_res4)){
+    $cat_arr4[]=$row4;    
+    }
+    foreach($cat_arr4 as $list){
+      echo htmlspecialchars_decode($list['data']);
+     }?>
 <?php include('bottam_header_url.php');?>
 <?php
 $play_id =$_GET['play_id'];
@@ -26,7 +35,7 @@ $result = mysqli_fetch_assoc($res);
                             <div class="h-[40px] content-center">
                                 <ul class="font-medium flex justify-between self-center w-full">
                                     <li class="mx-3 px-2">
-                                        <a href="index.php" class=""><i class="fa-solid fa-house"
+                                        <a href="https://nwoow.com/" class=""><i class="fa-solid fa-house"
                                                 style="font-size:20px; color:white;"></i></a>
                                     </li>
                                     <li class="mx-1 px-2 truncate text-white">
@@ -36,7 +45,7 @@ $result = mysqli_fetch_assoc($res);
                                         <div class="mx-2">
                                             <button id="shareButton"><i class="fa-solid fa-share"
                                                     style="font-size:20px;color:white;"></i></button>
-                                            <input type="hidden" value="<?php echo $filename = strtolower(str_replace(' ', '_', $result['name'])) . '.php';?> ">
+                                            <input type="hidden" value="https://nwoow.com/view-game/<?php echo $filename = strtolower(str_replace(' ', '-', $result['name'])) . '';?> ">
                                         </div>
                                     </li>
                                 </ul>
@@ -51,7 +60,7 @@ $result = mysqli_fetch_assoc($res);
                                 alt="Game Logo" class="h-[150px] w-[150px] mb-4 mx-auto" />
                             <h2 class="text-md font-semibold mb-4 text-center">Invite your friends to play this game!
                             </h2>
-                            <input type="text" id="shareLink" value="<?php echo $filename = strtolower(str_replace(' ', '_', $result['name'])) . '.php';?>" readonly
+                            <input type="text" id="shareLink" value="https://nwoow.com/view-game/<?php echo $filename = strtolower(str_replace(' ', '-', $result['name'])) . '';?>" readonly
                                 class="w-full p-2 rounded mb-4 text-blue-700 underline font-md border-dashed border-2 border-sky-700">
                             <button id="copyButton"
                                 class="bg-[#7008C5] text-white py-2 px-4 mb-4 w-full rounded-full">Copy</button>
@@ -83,7 +92,7 @@ $result = mysqli_fetch_assoc($res);
 
                         });
                     </script>
-                    <h1 class="sr-only">Bubble Shooter - Play online games for Free | Jambo Games </h1>
+                    <h2 class="sr-only">Bubble Shooter - Play online games for Free | Nwoow Games </h2>
                     <div class="bg-transparent absolute top-[50%] left-[50%] -translate-x-[50px] -translate-y-[50px]">
                         <div id="loading" class="hidden"><img src="images/games/<?php echo $result['image']?>" alt="<?php echo $result['name'];?>"
                                 class="h-[100px] w-[100px] object-contain animate-spin"></div>

@@ -48,6 +48,9 @@ if(isset($_SESSION['ADMIN_LOGIN']) && $_SESSION['ADMIN_LOGIN']!=''){
                   <a href="blogs.php">Blog</a>
                </li>
                <li class="menu-item-has-children dropdown">
+                  <a href="pages.php">Pages</a>
+               </li>
+               <li class="menu-item-has-children dropdown">
                   <a href="notifications.php">Notifications</a>
                </li>
             </ul>

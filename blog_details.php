@@ -1,4 +1,14 @@
 <?php include('top_header_url.php');?>
+<?php                                                                                                               
+    $cat_res4=mysqli_query($con,"select * from meta_data where page='blogs'");
+    $cat_arr4=array();
+    while($row4=mysqli_fetch_assoc($cat_res4)){
+    $cat_arr4[]=$row4;    
+    }
+    foreach($cat_arr4 as $list){
+      echo htmlspecialchars_decode($list['data']);
+     }?>
+     
 <?php include('bottam_header_url.php');?>
 <?php
 $blog_id =$_GET['blog_id'];
@@ -12,7 +22,7 @@ $result = mysqli_fetch_assoc($res);
         <?php include('header.php');?>
     </div>
     <div class="md:w-[80%] lg:w-[64%] w-full overflow-x-hidden mx-auto">
-        <h1 class="sr-only">Why Jambo Games Are the Best Place to Play 100% Free HTML5 Games | Jambo Games</h1>
+        <h1 class="sr-only">Why Nwoow Games Are the Best Place to Play 100% Free HTML5 Games | Nwoow Games</h1>
         <div class="w-full flex justify-center my-5">
             <div class="w-full" id="static-ad-1">
                 <script>
@@ -27,8 +37,7 @@ $result = mysqli_fetch_assoc($res);
             <img src="images/blogs/<?php echo $result['image1']?>"
                 alt="<?php echo $result['title']?>"
                 class="w-full object-cover aspect-[3/2] rounded-lg mb-3">
-            <h1 class="font-bold text-3xl uppercase"><?php echo $result['title']?>
-            </h1>
+            <h2 class="font-bold text-3xl uppercase"><?php echo $result['title']?></h2>
             <span class="text-[#D09DF9] mt-2 mb-5 font-light text-xs"><i
                     class="my-2 fa-sharp fa-solid fa-calendar-days pr-2"></i><?php echo $result['datee']?></span>
             <article class="text-white prose px-2 w-full" id="blog-content">

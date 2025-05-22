@@ -63,21 +63,23 @@ if (isset($_POST['submit'])) {
                                                 <?php echo $page; ?>
                                             </option>
                                             <option value="home">Home</option>
-                                            <option value="privacy_policy">Privacy Policy</option>
-                                            <option value="team_of_conditions">Terms Conditions</option>
-                                            <option value="about">About US</option>
-                                            <option value="contact">Contact US</option>
+                                            <option value="abouts">About US</option>
+                                            <option value="action">Action</option>
+                                            <option value="arcade">Arcade</option>
+                                            <option value="blogs">Blog</option>
+                                            <option value="casual">Casual</option>
+                                            <option value="contacts">Contact US</option>
                                             <option value="disclaimer">Disclaimer</option>
-                                            <option value="faq">faqS</option>
-                                            <option value="blog">Blog</option>
-                                            <option value="Entertainment">Entertainment</option>
-                                            <option value="funny">Funny</option>
-                                            <option value="general_knowledge">General Knowledge</option>
-                                            <option value="sports">Sports</option>
-                                            <option value="trending">Trending</option>
-                                            <option value="details">Details Game</option>
+                                            <option value="faqs">faqS</option>
+                                            <option value="games">Games</option>
+                                            <option value="imaging">Imaging</option>
                                             <option value="playgame">Play Game</option>
-                                            <option value="result">Result Game</option>
+                                            <option value="privacy">Privacy Policy</option>
+                                            <option value="puzzle">Puzzle</option>
+                                            <option value="register">Register</option>
+                                            <option value="signin">Sign In</option>
+                                            <option value="terms">Terms Of Condition</option>
+                                            <option value="viewgame">View Game</option>
                                         </select>
                                     </div>
                                     <div class="col-lg-10">

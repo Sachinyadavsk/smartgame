@@ -6,11 +6,18 @@
 RewriteEngine on 
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^(us|uk|in)/?$ index.php [L]
 RewriteRule ^blogs/?$ blogs.php
 RewriteRule ^privacy-policy?$ privacy-policy.php
-RewriteRule ^terms-and-conditions?$ terms-of-service.php
+RewriteRule ^terms-and-conditions?$ terms-of-conditions.php
 RewriteRule ^(disclaimer)/?$ disclaimer.php
-RewriteRule ^(faq)/?$ faq.php
+RewriteRule ^(faq)/?$ faqs.php
+RewriteRule ^(action)/?$ action.php
+RewriteRule ^(arcade)/?$ arcade.php
+RewriteRule ^(casual)/?$ casual.php
+RewriteRule ^(puzzle)/?$ puzzle.php
+RewriteRule ^(imaging)/?$ imaging.php
+RewriteRule ^(signin)/?$ signin.php
 RewriteRule ^(about-us)/?$ about-us.php
 RewriteRule ^(trending-now)/?$ trending-now.php
 RewriteRule ^(sports)/?$ sports.php
@@ -18,19 +25,22 @@ RewriteRule ^(general-knowledge)/?$ general-knowledge.php
 RewriteRule ^(entertainment)/?$ entertainment.php
 RewriteRule ^(funny)/?$ funny.php
 RewriteRule ^(contact-us)/?$ contact-us.php
-RewriteRule ^view-game/([^/\.]+)$ details.php?game=$1 [L,QSA]
-RewriteRule ^start-game/([^/\.]+)$ play.php?game_id=$1 [L,QSA]
+RewriteRule ^(games)/?$ games.php
+RewriteRule ^(regsiter)/?$ regsiter.php
+RewriteRule ^view-game/([^/\.]+)$ view-game.php?game=$1 [L,QSA]
+RewriteRule ^start-game/([^/\.]+)$ play-game.php?game_id=$1 [L,QSA]
 RewriteRule ^blog-details/([^/\.]+)$ blog_single.php?blog=$1 [L,QSA]
+
 ErrorDocument 404 /error/404.php
 
 
 # Redirect www to non-www
-RewriteCond %{HTTP_HOST} ^www\.game.reapbucks\.com [NC]
-RewriteRule ^(.*)$ https://game.reapbucks.com/$1 [R=301,L]
+RewriteCond %{HTTP_HOST} ^www\.nwoow\.com [NC]
+RewriteRule ^(.*)$ https://nwoow.com/$1 [R=301,L]
 
 # Redirect http to https
 RewriteCond %{HTTPS} off
-RewriteRule ^ https://game.reapbucks.com%{REQUEST_URI} [L,R=301]
+RewriteRule ^ https://nwoow.com%{REQUEST_URI} [L,R=301]
 
 #GZIP compression
 <IfModule mod_deflate.c>

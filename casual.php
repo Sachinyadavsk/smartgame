@@ -1,11 +1,20 @@
 <?php include('top_header_url.php');?>
+<?php                                                                                                               
+    $cat_res4=mysqli_query($con,"select * from meta_data where page='casual'");
+    $cat_arr4=array();
+    while($row4=mysqli_fetch_assoc($cat_res4)){
+    $cat_arr4[]=$row4;    
+    }
+    foreach($cat_arr4 as $list){
+      echo htmlspecialchars_decode($list['data']);
+     }?>
 <?php include('bottam_header_url.php');?>
 <body class="google-anno-skip main-container font-inter">
     <div class="w-full mx-auto">
         <?php include('header.php');?>
     </div>
     <div class="md:w-[80%] lg:w-[64%] w-full overflow-x-hidden mx-auto">
-        <h1 class="sr-only">Browse Exciting Game Categories | Free Games</h1>
+        <h1 class="sr-only">Browse Exciting Game Categories | Nwoow Games</h1>
         <div class="w-full flex justify-center my-5">
             <div class="w-full" id="static-ad-1">
                 <script>
@@ -24,7 +33,7 @@
                         style="font-weight: bold; background: linear-gradient(176.89deg, #FFFFFF 2.58%, #BEADCD 78.88%); -webkit-background-clip: text; color: transparent;">
                         Casual</h3>
                     <div class="grow"></div>
-                    <a class="text-[14px]  text-black font-bold capitalize" href="games.php"
+                    <a class="text-[14px]  text-black font-bold capitalize" href="games"
                         style="background: linear-gradient(180deg, #FFFFFF, #BEADCD); -webkit-background-clip: text; color: transparent;">view
                         all </a>
                     <img src="images/right-arrow.svg"
@@ -45,11 +54,11 @@
                                             class="h-[60px] w-[60px] object-contain animate-spin">
                                     </div>
                                     <div class="absolute inset-0">
-                                        <a href="view-game.php?game_id=<?php echo $row['id']?>">
+                                        <a href="view-game/<?php echo str_replace(' ','-', $row['name']); ?>">
                                             <img class="p-0 m-0 rounded-md block aspect-4/3 object-cover w-full" src="images/games/<?php echo $row['image']?>" alt="<?php echo $row['name']?>" />
                                         </a>
                                     </div>
-                                    <a href="view-game.php?game_id=<?php echo $row['id']?>">
+                                    <a href="view-game/<?php echo str_replace(' ','-', $row['name']); ?>">
                                         <div
                                             class="backdrop-blur-sm hidden md:visible bg-game-4-3 absolute inset-0 md:flex flex-col gap-4 items-center justify-center opacity-0 transition-opacity duration-300 group-hover:opacity-100">
                                             <img class="group-hover:translate-y-0 translate-y-6 transition-transform duration-300 p-0 mx-auto block aspect-1/1 object-fill w-[40%]"
@@ -74,6 +83,24 @@
 
             </div>
         </div>
+        <?php 
+                $sql="select * from pageslay where pages='casual' order by pageslay.id desc";
+                $res=mysqli_query($con,$sql);
+                $i=1;
+                while($row=mysqli_fetch_assoc($res)){?>
+        <div class="my-5 game-banner-container bg-cover bg-no-repeat bg-[#261137] border-[#D09DF9] border-[1px] border-opacity-30 text-white py-[3rem] px-10 grid justify-center place-item-center rounded-[30px]">
+            <div class="gap-4">
+                <h2 class="text-[24px] tracking-wide font-bold capitalize leading-5 mb-6 mt-4"><?php echo $row['title'];?></h2>
+                <div class="space-y-8">
+                    <?php echo $row['des'];?>
+                    <button class="btn btn-success" style="padding: 8px;margin-top: -17px;margin-right: 6px;float: right !important;background: green;border-radius: 8px;" onclick="myFunction()"> Read More &nbsp; <i id="toggle_icon"></i></button>
+                    <div id="read_more_section">
+                        <?php echo $row['logdes'];?>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <?php } ?>
         <div class="w-full flex justify-center my-5">
             <div class="w-full" id="static-ad-2">
                 <script>
